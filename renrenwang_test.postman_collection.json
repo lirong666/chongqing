@@ -1,0 +1,1515 @@
+{
+	"info": {
+		"_postman_id": "65138a39-46f0-418a-b980-6d6378f9d1f3",
+		"name": "renrenwang_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "82219cf6-0514-4864-83e5-290ae7c4f67a",
+						"exec": [
+							"//协议状态码200",
+							"pm.test(\"协议状态码200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"//响应时间小于250ms",
+							"pm.test(\"响应时间小于250ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(250);",
+							"});",
+							"",
+							"//code的值的为true",
+							"pm.test(\"code\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.code).to.eql(true);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " http://www.renren.com/SysHome.do",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "413162001@qq.com",
+							"type": "text"
+						},
+						{
+							"key": "icode",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "origURL",
+							"value": "http://www.renren.com/home",
+							"type": "text"
+						},
+						{
+							"key": "domain",
+							"value": "renren.com",
+							"type": "text"
+						},
+						{
+							"key": "key_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "captcha_type",
+							"value": "web_login",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "24975119278b02e68a7845a87679b3c94549867439ce7507c5808737cc35de92",
+							"type": "text"
+						},
+						{
+							"key": "rkey",
+							"value": "331da058ee000ef0cf4dd890b048d3c9",
+							"type": "text"
+						},
+						{
+							"key": "f",
+							"value": "http%3A%2F%2Fwww.renren.com%2F373256774%2Fnewsfeed%2Fphoto",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{ip}}/ajaxLogin/login",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"ajaxLogin",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "single",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "526cc7a2-938d-4ad8-abd0-0df5c062171b",
+						"exec": [
+							"//协议状态码为200",
+							"pm.test(\"协议状态码为200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"//断言是否有单身",
+							"pm.test(\"单身\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"单身\");",
+							"});",
+							"",
+							"//断言感情状态",
+							"pm.test(\"感情状态\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"感情状态\");",
+							"});",
+							"",
+							"//响应时间少于250ms",
+							"pm.test(\"响应时间少于250ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(250);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " http://www.renren.com/373256774/profile?v=info_timeline",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": " anonymid=k664ff5b-mkvqlo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "profile",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "albumId",
+							"value": "1213531036",
+							"type": "text"
+						},
+						{
+							"key": "photoId",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "photoUrl",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "loveInfoId",
+							"value": "3031122",
+							"type": "text"
+						},
+						{
+							"key": "yScale\t0",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "loveType",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "withName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "withId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "fromYear",
+							"value": "2020",
+							"type": "text"
+						},
+						{
+							"key": "fromMonth",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "fromDay",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "submit",
+							"value": "保存",
+							"type": "text"
+						},
+						{
+							"key": "requestToken",
+							"value": "1842204068",
+							"type": "text"
+						},
+						{
+							"key": "_rtk",
+							"value": "398ecbfe",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{ip}}/loveinfo/update",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"loveinfo",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "求勾搭",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "96757a2b-a3ac-47bd-ae3e-a39fa70a3c69",
+						"exec": [
+							"//协议状态码200",
+							"pm.test(\"协议状态码200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"//求勾搭",
+							"pm.test(\"求勾搭\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"求勾搭\");",
+							"});",
+							"",
+							"",
+							"",
+							"//编辑感情状态",
+							"pm.test(\"感情状态\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"感情状态\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " http://www.renren.com/373256774/profile?v=info_timeline",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": " anonymid=k664ff5b-mkvqlo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "profile",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "albumId",
+							"value": "1213531036",
+							"type": "text"
+						},
+						{
+							"key": "photoId",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "photoUrl",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "loveInfoId",
+							"value": "3031122",
+							"type": "text"
+						},
+						{
+							"key": "yScale\t0",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "loveType",
+							"value": "21",
+							"type": "text"
+						},
+						{
+							"key": "withName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "withId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "fromYear",
+							"value": "2020",
+							"type": "text"
+						},
+						{
+							"key": "fromMonth",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "fromDay",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "submit",
+							"value": "保存",
+							"type": "text"
+						},
+						{
+							"key": "requestToken",
+							"value": "1842204068",
+							"type": "text"
+						},
+						{
+							"key": "_rtk",
+							"value": "398ecbfe",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{ip}}/loveinfo/update",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"loveinfo",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "暧昧期",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3049c193-201c-4402-9233-e68153cd3f4e",
+						"exec": [
+							"//协议状态码200",
+							"pm.test(\"协议状态码200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"//暧昧期",
+							"pm.test(\"暧昧期\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"暧昧期\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"type": "text",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Referer",
+						"type": "text",
+						"value": " http://www.renren.com/373256774/profile?v=info_timeline"
+					},
+					{
+						"key": "Cookie",
+						"type": "text",
+						"value": " anonymid=k664ff5b-mkvqlo"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "profile",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "albumId",
+							"value": "1213531036",
+							"type": "text"
+						},
+						{
+							"key": "photoId",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "photoUrl",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "loveInfoId",
+							"value": "3031122",
+							"type": "text"
+						},
+						{
+							"key": "yScale\t0",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "loveType",
+							"value": "22",
+							"type": "text"
+						},
+						{
+							"key": "withName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "withId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "fromYear",
+							"value": "2020",
+							"type": "text"
+						},
+						{
+							"key": "fromMonth",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "fromDay",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "submit",
+							"value": "保存",
+							"type": "text"
+						},
+						{
+							"key": "requestToken",
+							"value": "1842204068",
+							"type": "text"
+						},
+						{
+							"key": "_rtk",
+							"value": "398ecbfe",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{ip}}/loveinfo/update",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"loveinfo",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "和张学友恋爱中",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c05f8593-c097-4abb-a4f8-7c66450bd24e",
+						"exec": [
+							"//协议状态码200",
+							"pm.test(\"协议状态码200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"//和 张学友 恋爱中",
+							"",
+							"pm.test(\"和 张学友 恋爱中\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"和 张学友 恋爱中\");",
+							"});",
+							"",
+							"//感情状态",
+							"pm.test(\"感情状态\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"感情状态\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " http://www.renren.com/373256774/profile?v=info_timeline",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": " anonymid=k664ff5b-mkvqlo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "profile",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "albumId",
+							"value": "1213531036",
+							"type": "text"
+						},
+						{
+							"key": "photoId",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "photoUrl",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "loveInfoId",
+							"value": "3031122",
+							"type": "text"
+						},
+						{
+							"key": "yScale\t0",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "loveType",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "withName",
+							"value": "张学友",
+							"type": "text"
+						},
+						{
+							"key": "withId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "fromYear",
+							"value": "2020",
+							"type": "text"
+						},
+						{
+							"key": "fromMonth",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "fromDay",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "submit",
+							"value": "保存",
+							"type": "text"
+						},
+						{
+							"key": "requestToken",
+							"value": "1842204068",
+							"type": "text"
+						},
+						{
+							"key": "_rtk",
+							"value": "398ecbfe",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{ip}}/loveinfo/update",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"loveinfo",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "失恋了",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c05f8593-c097-4abb-a4f8-7c66450bd24e",
+						"exec": [
+							"//协议状态码200",
+							"pm.test(\"协议状态码200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"//和 张学友 恋爱中",
+							"",
+							"pm.test(\"失恋了\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"失恋了\");",
+							"});",
+							"",
+							"//感情状态",
+							"pm.test(\"感情状态\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"感情状态\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " http://www.renren.com/373256774/profile?v=info_timeline",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"value": " anonymid=k664ff5b-mkvqlo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "profile",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "albumId",
+							"value": "1213531036",
+							"type": "text"
+						},
+						{
+							"key": "photoId",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "photoUrl",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "loveInfoId",
+							"value": "3031122",
+							"type": "text"
+						},
+						{
+							"key": "yScale\t0",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "loveType",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "withName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "withId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "fromYear",
+							"value": "2020",
+							"type": "text"
+						},
+						{
+							"key": "fromMonth",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "fromDay",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "submit",
+							"value": "保存",
+							"type": "text"
+						},
+						{
+							"key": "requestToken",
+							"value": "1842204068",
+							"type": "text"
+						},
+						{
+							"key": "_rtk",
+							"value": "398ecbfe",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{ip}}/loveinfo/update",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"loveinfo",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "不填写",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c05f8593-c097-4abb-a4f8-7c66450bd24e",
+						"exec": [
+							"//协议状态码200",
+							"pm.test(\"协议状态码200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"//感情状态",
+							"pm.test(\"感情状态\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"感情状态\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"type": "text",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Referer",
+						"type": "text",
+						"value": " http://www.renren.com/373256774/profile?v=info_timeline"
+					},
+					{
+						"key": "Cookie",
+						"type": "text",
+						"value": " anonymid=k664ff5b-mkvqlo"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "profile",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "albumId",
+							"value": "1213531036",
+							"type": "text"
+						},
+						{
+							"key": "photoId",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "photoUrl",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "loveInfoId",
+							"value": "3031122",
+							"type": "text"
+						},
+						{
+							"key": "yScale\t0",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "loveType",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "withName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "withId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "fromYear",
+							"value": "2020",
+							"type": "text"
+						},
+						{
+							"key": "fromMonth",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "fromDay",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "submit",
+							"value": "保存",
+							"type": "text"
+						},
+						{
+							"key": "requestToken",
+							"value": "1842204068",
+							"type": "text"
+						},
+						{
+							"key": "_rtk",
+							"value": "398ecbfe",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{ip}}/loveinfo/update",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"loveinfo",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改工作信息",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5301f276-dbae-4df9-8dda-4bce17cc40af",
+						"exec": [
+							"//协议状态码200",
+							"pm.test(\"协议状态码200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"//key的值为深圳罗湖",
+							"",
+							"pm.test(\"深圳罗湖\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"深圳罗湖\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " http://www.renren.com/373256774/profile?v=info_timeline",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "company_name_0",
+							"value": "深圳罗湖",
+							"type": "text"
+						},
+						{
+							"key": "industry_0",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "subindustry_0",
+							"value": "102",
+							"type": "text"
+						},
+						{
+							"key": "position_0",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "subposition_0",
+							"value": "407",
+							"type": "text"
+						},
+						{
+							"key": "workInfo_key_0",
+							"value": "348491207",
+							"type": "text"
+						},
+						{
+							"key": "work_current_0",
+							"value": "yes",
+							"type": "text"
+						},
+						{
+							"key": "join_year_0",
+							"value": "2020",
+							"type": "text"
+						},
+						{
+							"key": "join_month_0",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "quit_year_0",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "quit_month_0",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "company_name_1",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "industry_1",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "subindustry_1",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "position_1",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "subposition_1",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "workInfo_key_1",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "join_year_1",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "join_month_1",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "quit_year_1",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "quit_month_1",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "company_name_2",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "industry_2",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "subindustry_2",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "position_2",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "subposition_2",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "workInfo_key_2",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "join_year_2",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "join_month_2",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "quit_year_2",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "quit_month_2",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "company_name_3",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "industry_3",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "subindustry_3",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "position_3",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "subposition_3",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "workInfo_key_3",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "join_year_3",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "join_month_3",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "quit_year_3",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "quit_month_3",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "company_name_4",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "industry_4",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "subindustry_4",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "position_4",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "subposition_4",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "workInfo_key_4",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "join_year_4",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "join_month_4",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "quit_year_4",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "quit_month_4",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "submit",
+							"value": "保存",
+							"type": "text"
+						},
+						{
+							"key": "requestToken",
+							"value": "1842204068",
+							"type": "text"
+						},
+						{
+							"key": "_rtk",
+							"value": "398ecbfe",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{ip}}/MyWorkInfo.do",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"MyWorkInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "interest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "36a8a12d-db06-4e80-bdbc-4860c14e117b",
+						"exec": [
+							"//协议状态码200",
+							"pm.test(\"协议状态码200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " http://www.renren.com/373256774/profile?v=info_timeline",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "music",
+							"value": "小黄人",
+							"type": "text"
+						},
+						{
+							"key": "interest",
+							"value": "旅游唱歌",
+							"type": "text"
+						},
+						{
+							"key": "book",
+							"value": "无",
+							"type": "text"
+						},
+						{
+							"key": "movie",
+							"value": "无",
+							"type": "text"
+						},
+						{
+							"key": "game",
+							"value": "无",
+							"type": "text"
+						},
+						{
+							"key": "comic",
+							"value": "无",
+							"type": "text"
+						},
+						{
+							"key": "sport",
+							"value": "无",
+							"type": "text"
+						},
+						{
+							"key": "errorReturn",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "submit",
+							"value": "保存",
+							"type": "text"
+						},
+						{
+							"key": "requestToken",
+							"value": "1842204068",
+							"type": "text"
+						},
+						{
+							"key": "_rtk",
+							"value": "398ecbfe",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{ip}}/PersonalInfo.do",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"PersonalInfo.do"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "photo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:72.0) Gecko/20100101 Firefox/72.0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " http://upload.renren.com/ajaxproxy.htm",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": ""
+					}
+				},
+				"url": {
+					"raw": "http://photo.renren.com/photo/facade/common/album/publisher",
+					"protocol": "http",
+					"host": [
+						"photo",
+						"renren",
+						"com"
+					],
+					"path": [
+						"photo",
+						"facade",
+						"common",
+						"album",
+						"publisher"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "2105d76d-f8d1-4060-b68d-bf092f056ed2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b67a6dda-3f21-42c0-a46f-9654935546ce",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
