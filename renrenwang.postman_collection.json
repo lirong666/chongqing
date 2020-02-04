@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "0148bed5-0942-495b-8406-b2c9006ff3a8",
+		"name": "人人网登录及上传图片",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "人人网登录",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " http://www.renren.com/",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "413162001@qq.com",
+							"type": "text"
+						},
+						{
+							"key": "icode",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "origURL",
+							"value": "http://www.renren.com/home",
+							"type": "text"
+						},
+						{
+							"key": "domain",
+							"value": "renren.com",
+							"type": "text"
+						},
+						{
+							"key": "key_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "captcha_type",
+							"value": "web_login",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "3e4aa04ee8404c55852ee4fa0de41874b4c43e5eb71277c03fd3ab4295f6172b",
+							"type": "text"
+						},
+						{
+							"key": "rkey",
+							"value": "3122becabc556a1fc3bdc841313a021e",
+							"type": "text"
+						},
+						{
+							"key": "f",
+							"value": "https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DaAYRp0vHvcHCMSAG-eBgMUWRsYcbgjjvo0ujOXSt9XK%26wd%3D%26eqid%3Da36fad35000a803c000000065df8d895",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://www.renren.com/ajaxLogin/login?1=1&uniqueTimestamp=20191122158205",
+					"protocol": "http",
+					"host": [
+						"www",
+						"renren",
+						"com"
+					],
+					"path": [
+						"ajaxLogin",
+						"login"
+					],
+					"query": [
+						{
+							"key": "1",
+							"value": "1"
+						},
+						{
+							"key": "uniqueTimestamp",
+							"value": "20191122158205"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "上传照片",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " http://www.renren.com/373256774/profile",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": "/C:/Users/Administrator/Pictures/timg.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://upload.renren.com/upload.fcgi?pagetype=addpublishersingle&hostid=373256774&callback=window.parent.handlePhotoData&uploadid=profile_publisher_photo_1576590885423",
+					"protocol": "http",
+					"host": [
+						"upload",
+						"renren",
+						"com"
+					],
+					"path": [
+						"upload.fcgi"
+					],
+					"query": [
+						{
+							"key": "pagetype",
+							"value": "addpublishersingle"
+						},
+						{
+							"key": "hostid",
+							"value": "373256774"
+						},
+						{
+							"key": "callback",
+							"value": "window.parent.handlePhotoData"
+						},
+						{
+							"key": "uploadid",
+							"value": "profile_publisher_photo_1576590885423"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,604 @@
+{
+	"info": {
+		"_postman_id": "9eba2ebe-6b85-4c09-80b1-290db5c43995",
+		"name": "人人网登录和更改感情状态",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "人人网登录 ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " http://www.renren.com/",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "413162001@qq.com",
+							"type": "text"
+						},
+						{
+							"key": "icode",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "origURL",
+							"value": "http://www.renren.com/home",
+							"type": "text"
+						},
+						{
+							"key": "domain",
+							"value": "renren.com",
+							"type": "text"
+						},
+						{
+							"key": "key_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "captcha_type",
+							"value": "web_login",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "3e4aa04ee8404c55852ee4fa0de41874b4c43e5eb71277c03fd3ab4295f6172b",
+							"type": "text"
+						},
+						{
+							"key": "rkey",
+							"value": "3122becabc556a1fc3bdc841313a021e",
+							"type": "text"
+						},
+						{
+							"key": "f",
+							"value": "https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3DaAYRp0vHvcHCMSAG-eBgMUWRsYcbgjjvo0ujOXSt9XK%26wd%3D%26eqid%3Da36fad35000a803c000000065df8d895",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://www.renren.com/ajaxLogin/login?1=1&uniqueTimestamp=20191122158205",
+					"protocol": "http",
+					"host": [
+						"www",
+						"renren",
+						"com"
+					],
+					"path": [
+						"ajaxLogin",
+						"login"
+					],
+					"query": [
+						{
+							"key": "1",
+							"value": "1"
+						},
+						{
+							"key": "uniqueTimestamp",
+							"value": "20191122158205"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "单身",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " http://www.renren.com/373256774/profile?v=info_timeline",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "profile",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "albumId",
+							"value": "1213531036",
+							"type": "text"
+						},
+						{
+							"key": "photoId",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "photoUrl",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "loveInfoId",
+							"value": "3031122",
+							"type": "text"
+						},
+						{
+							"key": "yScale",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "loveType",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "withName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "withId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "fromYear",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "fromMonth",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "fromDay",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "submit",
+							"value": "保存",
+							"type": "text"
+						},
+						{
+							"key": "requestToken",
+							"value": "1874616217",
+							"type": "text"
+						},
+						{
+							"key": "_rtk",
+							"value": "3b7d5df3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://www.renren.com/loveinfo/update?v=info_timeline",
+					"protocol": "http",
+					"host": [
+						"www",
+						"renren",
+						"com"
+					],
+					"path": [
+						"loveinfo",
+						"update"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": "info_timeline"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "求勾搭",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " http://www.renren.com/373256774/profile?v=info_timeline",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "profile",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "albumId",
+							"value": "1213531036",
+							"type": "text"
+						},
+						{
+							"key": "photoId",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "photoUrl",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "loveInfoId",
+							"value": "3031122",
+							"type": "text"
+						},
+						{
+							"key": "yScale",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "loveType",
+							"value": "21",
+							"type": "text"
+						},
+						{
+							"key": "withName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "withId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "fromYear",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "fromMonth",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "fromDay",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "submit",
+							"value": "保存",
+							"type": "text"
+						},
+						{
+							"key": "requestToken",
+							"value": "1874616217",
+							"type": "text"
+						},
+						{
+							"key": "_rtk",
+							"value": "3b7d5df3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://www.renren.com/loveinfo/update?v=info_timeline",
+					"protocol": "http",
+					"host": [
+						"www",
+						"renren",
+						"com"
+					],
+					"path": [
+						"loveinfo",
+						"update"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": "info_timeline"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "暧昧期",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " http://www.renren.com/373256774/profile?v=info_timeline",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "profile",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "albumId",
+							"value": "1213531036",
+							"type": "text"
+						},
+						{
+							"key": "photoId",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "photoUrl",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "loveInfoId",
+							"value": "3031122",
+							"type": "text"
+						},
+						{
+							"key": "yScale",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "loveType",
+							"value": "22",
+							"type": "text"
+						},
+						{
+							"key": "withName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "withId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "fromYear",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "fromMonth",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "fromDay",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "submit",
+							"value": "保存",
+							"type": "text"
+						},
+						{
+							"key": "requestToken",
+							"value": "1874616217",
+							"type": "text"
+						},
+						{
+							"key": "_rtk",
+							"value": "3b7d5df3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://www.renren.com/loveinfo/update?v=info_timeline",
+					"protocol": "http",
+					"host": [
+						"www",
+						"renren",
+						"com"
+					],
+					"path": [
+						"loveinfo",
+						"update"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": "info_timeline"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "不填写",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Referer",
+						"value": " http://www.renren.com/373256774/profile?v=info_timeline",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "profile",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "albumId",
+							"value": "1213531036",
+							"type": "text"
+						},
+						{
+							"key": "photoId",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "photoUrl",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "loveInfoId",
+							"value": "3031122",
+							"type": "text"
+						},
+						{
+							"key": "yScale",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "loveType",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "withName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "withId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "fromYear",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "fromMonth",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "fromDay",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "submit",
+							"value": "保存",
+							"type": "text"
+						},
+						{
+							"key": "requestToken",
+							"value": "1874616217",
+							"type": "text"
+						},
+						{
+							"key": "_rtk",
+							"value": "3b7d5df3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://www.renren.com/loveinfo/update?v=info_timeline",
+					"protocol": "http",
+					"host": [
+						"www",
+						"renren",
+						"com"
+					],
+					"path": [
+						"loveinfo",
+						"update"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": "info_timeline"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
